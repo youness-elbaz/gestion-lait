@@ -177,3 +177,6 @@ footer{
 .show-when-mobile {
   display: none;
 }
+p{
+  color: black;
+}

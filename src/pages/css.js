@@ -1,4 +1,6 @@
-function App() {
+import React from "react";
+
+const Css = () => {
   return (
     <>
       <header className="hide-when-mobile">
@@ -130,16 +132,14 @@ function App() {
         </div>
       </header>
       <main>
-        Respossive Drop-down <br />
-        Menu Bar <br />
-        HTML &amp; CSS only
+        <p>CSS PAGE</p>
       </main>
       <footer>
-        Designed and developed by Courses4Arab.com
+        DDDesigned and developed by Courses4Arab.com
         <span>🧡</span>
       </footer>
     </>
   );
-}
+};
 
-export default App;
+export default Css;
