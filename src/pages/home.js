@@ -1,15 +1,14 @@
 import React from "react";
 import Header from '../compenant/Header'
 import Footer from '../compenant/Footer';
+import MainContent from '../compenant/MainContent';
 
 const Home = () => {
   return (
     <>
     <Header/>
-      <main>
-        <p>HOME PAGE</p>
-      </main>
-
+    <MainContent  NamePage={"Home Page"} Desagner="ELbaz Youness" />
+    
       
       <Footer/>
       

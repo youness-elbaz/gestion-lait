@@ -1,18 +1,15 @@
 import React from "react";
-import Header from '../compenant/Header'
-import Footer from '../compenant/Footer';
-
+import Header from "../compenant/Header";
+import Footer from "../compenant/Footer";
+import MainContent from "../compenant/MainContent";
 
 const Css = () => {
   return (
     <>
-    <Header/>
-      <main>
-        <p>CSS PAGE</p>
-      </main>
-  
-      <Footer/>
-    
+      <Header />
+
+      <MainContent  NamePage={"CSS Page"} Desagner={"Elbaz loqman"}/>
+      <Footer />
     </>
   );
 };

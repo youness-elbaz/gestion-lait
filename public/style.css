@@ -50,6 +50,7 @@ h1 {
   font-size: 25px;
 }
 
+
 /* ===============
    1.  ul class .flex
 ================ */
@@ -73,7 +74,8 @@ h1 {
   padding: 8px 15px;
 }
 
-.main-link:hover {
+
+.main-link:hover, .main-link.active{
   color: cyan;
   box-shadow: 0 0 5px cyan;
   border-radius: 5px;
@@ -179,4 +181,7 @@ footer{
 }
 p{
   color: black;
+  white-space: pre;
 }
+
+

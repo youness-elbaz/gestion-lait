@@ -1,15 +1,14 @@
 import React from "react";
 import Header from '../compenant/Header'
 import Footer from '../compenant/Footer';
+import MainContent from "../compenant/MainContent";
 
 
 const JavaScript = () => {
   return (
     <>
       <Header/>
-      <main>
-        <p>JavaScript PAGE</p>
-      </main>
+      <MainContent  NamePage={"JAVASCRIPT Page"} Desagner={" kaabi aicha "}/>
     
       <Footer/>
     
