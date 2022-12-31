@@ -3,10 +3,12 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer>
-        Designed and developed by Belhaj-Infos
-        <span>🧡</span>
-    </footer>
+    <div className='MyFooter'>
+      <footer className='youness'>
+          Designed and developed by Belhaj-Infos
+          <span>🧡</span>
+      </footer>
+    </div>
   )
 }
 

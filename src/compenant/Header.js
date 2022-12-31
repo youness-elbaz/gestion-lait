@@ -4,7 +4,7 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <div>
+    <div className="youness">
       <header className="hide-when-mobile">
         <h1>
           <Link to="/">Extar Milk</Link>

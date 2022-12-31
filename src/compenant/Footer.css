@@ -1,7 +1,11 @@
-footer{
+.MyFooter footer{
   background-color: #05670d;
 
   padding: 20px 0;
   text-align: center;
   font-size: 18px;
+}
+
+.MyFooter .youness{
+  background: rgb(0, 107, 128);
 }
