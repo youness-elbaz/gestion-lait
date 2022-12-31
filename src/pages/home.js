@@ -3,6 +3,7 @@ import Header from '../compenant/Header'
 import Footer from '../compenant/Footer';
 import MainContent from '../compenant/MainContent';
 
+
 const Home = () => {
   return (
     <>

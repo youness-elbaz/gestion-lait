@@ -1,15 +1,14 @@
-import React from 'react'
-import { Link,NavLink } from "react-router-dom";
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import "./Header.css";
 
- const Header = () => {
+const Header = () => {
   return (
     <div>
-  <header className="hide-when-mobile">
+      <header className="hide-when-mobile">
         <h1>
-          <Link to="/">
-          Extar Milk
-          </Link>
-          </h1>
+          <Link to="/">Extar Milk</Link>
+        </h1>
         <ul className="flex">
           <li className="main-list">
             <NavLink className="main-link" to="/html">
@@ -137,6 +136,6 @@ import { Link,NavLink } from "react-router-dom";
         </div>
       </header>
     </div>
-  )
-}
+  );
+};
 export default Header;
