@@ -1,11 +1,17 @@
-header {
-  background-color:teal;
+.Light header {
+  background-color: teal;
+}
+
+.Dark header {
+  background-color: rgb(9, 9, 9);
 }
 
 .hide-when-mobile {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
+
 
 
 

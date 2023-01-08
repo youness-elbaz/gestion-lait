@@ -1,11 +1,13 @@
-.MyFooter footer{
-  background-color: #05670d;
-
+.Light .MyFooter footer {
+  background-color: teal;
   padding: 20px 0;
   text-align: center;
   font-size: 18px;
 }
 
-.MyFooter .youness{
-  background: rgb(0, 107, 128);
+.Dark .MyFooter footer {
+  background-color: rgb(9, 9, 9);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 18px;
 }

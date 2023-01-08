@@ -1,14 +1,24 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
+import "../context/themedark.css";
+
+import {useContext}  from "react";
+import ThemeContexttt from "../context/themeContext";
 
 const Header = () => {
+  const {theme,changeMode} = useContext(ThemeContexttt);
   return (
     <div className="youness">
       <header className="hide-when-mobile">
         <h1>
-          <Link to="/">Extar Milk</Link>
+          <Link to="/">Extra Milk</Link>
         </h1>
+        <button className="theme-btn"  onClick={() => changeMode(theme === "Light" ? "Dark" :"Light")}>{theme}</button>
+      
+      
+      
+      
         <ul className="flex">
           <li className="main-list">
             <NavLink className="main-link" to="/html">
