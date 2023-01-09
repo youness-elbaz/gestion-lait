@@ -1,9 +1,10 @@
 import { createContext, useReducer } from "react";
 const ThemeContexttt = createContext();
 
+const modeThme=localStorage.getItem("modeTheme")
 const initialData = {
 
-  theme: "Light",
+  theme: `${ modeThme ===null?"Light":modeThme}`,
   
 
 };
