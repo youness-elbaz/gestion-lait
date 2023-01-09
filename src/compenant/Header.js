@@ -21,17 +21,22 @@ const Header = () => {
         <h1>
           <Link to="/">Extra Milk</Link>
         </h1>
-        <button
+        {/* <button
           className="theme-btn"
-          onClick={
-            () => { setDataThme() }
-                  
-          }
+          
           
         >
           {theme}
-        </button>
-
+        </button> */}
+        <i onClick={
+            () => { setDataThme() }
+                  
+          } class="fa-solid fa-sun"></i>
+        <i
+        onClick={
+          () => { setDataThme() }
+                
+        } class="fa-solid fa-moon"></i>
         <ul className="flex">
           <li className="main-list">
             <NavLink className="main-link" to="/html">

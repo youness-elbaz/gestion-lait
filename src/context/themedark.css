@@ -36,3 +36,23 @@
   box-shadow: 0 0 10px #9e4673, 0 0 40px #9e4673, 0 0 80px #9e4673;
   box-shadow: 0 0 0 5px #3d4a59, 0 0 0 6px #fff;
 }
+
+.Light .fa-sun{
+  display: none;
+}
+
+.Dark .fa-moon{
+  display: none;
+}
+
+.fa-sun{
+  color:#F28C38 ;
+}
+.fa-solid{
+  font-size: 20px;
+}
+.fa-solid:hover{
+  font-size: 22px;
+  transform: 0.1s;
+  cursor: pointer;
+}
