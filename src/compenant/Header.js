@@ -19,15 +19,9 @@ const Header = () => {
     <div className="youness">
       <header className="hide-when-mobile">
         <h1>
-          <Link to="/">Extra Milk</Link>
+          <Link to="/"></Link>
         </h1>
-        {/* <button
-          className="theme-btn"
-          
-          
-        >
-          {theme}
-        </button> */}
+      
         <i onClick={
             () => { setDataThme() }
                   
@@ -39,25 +33,23 @@ const Header = () => {
         } class="fa-solid fa-moon"></i>
         <ul className="flex">
           <li className="main-list">
-            <NavLink className="main-link" to="/html">
-              HTML
+            <NavLink className="main-link" to="/SignIn">
+              SignIn
             </NavLink>
-            {/* <ul className="sub-ul">
-              <li>
-                <a href="">Full Course</a>
-              </li>
-              <li>
-                <a href="">Crash Course</a>
-              </li>
-              <li>
-                <a href="">learn in 1h</a>
-              </li>
-            </ul> */}
           </li>
           <li className="main-list">
-            <NavLink className="main-link" to="/css">
-              {" "}
-              CSS{" "}
+            <NavLink className="main-link" to="/SignUp">
+              SignUp
+            </NavLink>
+          </li>
+          <li className="main-list">
+            <NavLink className="main-link" to="/Vaches">
+              Vaches
+            </NavLink>
+          </li>
+          <li className="main-list">
+            <NavLink className="main-link" to="/Genisses">
+              Genisses
             </NavLink>
             {/* <ul className="sub-ul">
               <li>
@@ -83,9 +75,8 @@ const Header = () => {
             </ul> */}
           </li>
           <li className="main-list">
-            <NavLink className="main-link" to="/javascript">
-              {" "}
-              JavaScript{" "}
+            <NavLink className="main-link" to="/Veaux">
+              Veaux
             </NavLink>
             {/* <ul className="sub-ul sub-of-js">
               <li>
@@ -93,6 +84,17 @@ const Header = () => {
               </li>
             </ul> */}
           </li>
+          <li className="main-list">
+            <NavLink className="main-link" to="/Collect">
+              Collect
+            </NavLink>
+            {/* <ul className="sub-ul sub-of-js">
+              <li>
+                <a href="">coming soon🔥</a>
+              </li>
+            </ul> */}
+          </li>
+
         </ul>
       </header>
       <header className="show-when-mobile">

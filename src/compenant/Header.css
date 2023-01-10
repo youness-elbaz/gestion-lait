@@ -4,6 +4,7 @@
 
 .Dark header {
   background-color: rgb(9, 9, 9);
+
 }
 
 .hide-when-mobile {
@@ -22,7 +23,7 @@
   display: none;
 }
 
-@media (max-width:800px) {
+@media (max-width:300px) {
   .show-when-mobile {
     display: block;
   }

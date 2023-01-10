@@ -5,15 +5,15 @@ import MainContent from "../compenant/MainContent";
 import { Helmet } from 'react-helmet-async';
 
 
-const Html = () => {
+const Vaches = () => {
   return (
     <>
     <Helmet>
-        <title>Page Html</title>
+        <title>Page Traitement Des Vaches</title>
       
       </Helmet>
       <Header/>
-      <MainContent  NamePage={"HTML Page"}   Desagner={"Hajar elbaz"}/>
+      <MainContent  NamePage={"Page Traitement Des Vaches"}   Desagner={"Hajar elbaz"}/>
     
       <Footer/>
     
@@ -21,4 +21,4 @@ const Html = () => {
   );
 };
 
-export default Html;
+export default Vaches;

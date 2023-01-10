@@ -4,15 +4,16 @@ import Footer from '../compenant/Footer';
 import MainContent from "../compenant/MainContent";
 import { Helmet } from 'react-helmet-async';
 
-const JavaScript = () => {
+
+const Collect = () => {
   return (
     <>
     <Helmet>
-        <title>Page css</title>
+        <title>Page Traitement Collect du lait</title>
       
       </Helmet>
       <Header/>
-      <MainContent  NamePage={"JAVASCRIPT Page"} Desagner={" kaabi aicha "}/>
+      <MainContent  NamePage={"Page Traitement Collect du lait"}   Desagner={"elbaz youness"}/>
     
       <Footer/>
     
@@ -20,4 +21,4 @@ const JavaScript = () => {
   );
 };
 
-export default JavaScript;
+export default Collect;
