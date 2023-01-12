@@ -63,10 +63,11 @@ input {
   color: white;
 }
 
-.Light form label,
-.Light form p {
+.Light form label,.Light .create,
+.Light form p  {
   color: black !important;
 }
+
 
 form label {
   font-size: 18px;
@@ -121,4 +122,10 @@ input[type="submit"]:hover {
 }
 input[type="submit"]:active{
   scale: 0.9;
+}
+.error-message {
+
+  background-color: #f44336;
+  color: white !important;
+  text-align: center;
 }

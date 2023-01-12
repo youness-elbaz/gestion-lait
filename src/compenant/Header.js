@@ -6,95 +6,145 @@ import "../context/themedark.css";
 import { useContext } from "react";
 import ThemeContexttt from "../context/themeContext";
 
+import { useAuthState } from "react-firebase-hooks/auth";
+
+import { auth } from "../FireBase/Config";
+import { signOut } from "firebase/auth";
+
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+
   const { theme, changeMode } = useContext(ThemeContexttt);
   const setDataThme = () => {
-     changeMode(theme === "Light" ? "Dark" : "Light"  )
-    localStorage.setItem("modeTheme", `${theme === "Light" ? "Dark" : "Light"}`);
+    changeMode(theme === "Light" ? "Dark" : "Light");
+    localStorage.setItem(
+      "modeTheme",
+      `${theme === "Light" ? "Dark" : "Light"}`
+    );
   };
-
-  
-
+  const navigate = useNavigate();
   return (
     <div className="youness">
+      {user && <h3>utilisateur :</h3>}
+
       <header className="hide-when-mobile">
         <h1>
-          <Link to="/"></Link>
+          <Link to="/">ExtraMilk</Link>
         </h1>
-      
-        <i onClick={
-            () => { setDataThme() }
-                  
-          } class="fa-solid fa-sun"></i>
-        <i
-        onClick={
-          () => { setDataThme() }
-                
-        } class="fa-solid fa-moon"></i>
-        <ul className="flex">
-          <li className="main-list">
-            <NavLink className="main-link" to="/SignIn">
-              SignIn
-            </NavLink>
-          </li>
-          <li className="main-list">
-            <NavLink className="main-link" to="/SignUp">
-              SignUp
-            </NavLink>
-          </li>
-          <li className="main-list">
-            <NavLink className="main-link" to="/Vaches">
-              Vaches
-            </NavLink>
-          </li>
-          <li className="main-list">
-            <NavLink className="main-link" to="/Genisses">
-              Genisses
-            </NavLink>
-            {/* <ul className="sub-ul">
-              <li>
-                <a href="">Full Course</a>
-              </li>
-              <li>
-                <a href="">CSS Examples</a>
-              </li>
-              <li className="mini-projects">
-                <a href="">mini projects&nbsp; + </a>
-                <ul className="sub-sub-ul">
-                  <li>
-                    <a href="">project 1</a>
-                  </li>
-                  <li>
-                    <a href="">project 2</a>
-                  </li>
-                  <li>
-                    <a href="">project 3</a>
-                  </li>
-                </ul>
-              </li>
-            </ul> */}
-          </li>
-          <li className="main-list">
-            <NavLink className="main-link" to="/Veaux">
-              Veaux
-            </NavLink>
-            {/* <ul className="sub-ul sub-of-js">
-              <li>
-                <a href="">coming soon🔥</a>
-              </li>
-            </ul> */}
-          </li>
-          <li className="main-list">
-            <NavLink className="main-link" to="/Collect">
-              Collect
-            </NavLink>
-            {/* <ul className="sub-ul sub-of-js">
-              <li>
-                <a href="">coming soon🔥</a>
-              </li>
-            </ul> */}
-          </li>
 
+        <i
+          onClick={() => {
+            setDataThme();
+          }}
+          class="fa-solid fa-sun"
+        ></i>
+        <i
+          onClick={() => {
+            setDataThme();
+          }}
+          class="fa-solid fa-moon"
+        ></i>
+        <ul className="flex">
+          {!user && (
+            <li className="main-list">
+              <NavLink className="main-link" to="/SignIn">
+                SignIn
+              </NavLink>
+            </li>
+          )}
+
+          {!user && (
+            <li className="main-list">
+              <NavLink className="main-link" to="/SignUp">
+                SignUp
+              </NavLink>
+            </li>
+          )}
+
+          {user && (
+            <li
+              onClick={(eo) => {
+                signOut(auth)
+                  .then(() => {
+                    navigate("/SignIn");
+
+                    console.log("  // Sign-out successful.");
+                  })
+                  .catch((error) => {
+                    console.log("  // An error happened.");
+                    //
+                  });
+              }}
+              className="main-list"
+            >
+              <NavLink className="main-link">SignOut</NavLink>
+            </li>
+          )}
+
+          {user && (
+            <li className="main-list">
+              <NavLink className="main-link" to="/Vaches">
+                Vaches
+              </NavLink>
+            </li>
+          )}
+          {user && (
+            <li className="main-list">
+              <NavLink className="main-link" to="/Genisses">
+                Genisses
+              </NavLink>
+              {/* <ul className="sub-ul">
+    <li>
+      <a href="">Full Course</a>
+    </li>
+    <li>
+      <a href="">CSS Examples</a>
+    </li>
+    <li className="mini-projects">
+      <a href="">mini projects&nbsp; + </a>
+      <ul className="sub-sub-ul">
+        <li>
+          <a href="">project 1</a>
+        </li>
+        <li>
+          <a href="">project 2</a>
+        </li>
+        <li>
+          <a href="">project 3</a>
+        </li>
+      </ul>
+    </li>
+  </ul> */}
+            </li>
+          )}
+
+          {user && (
+            <li className="main-list">
+              <NavLink className="main-link" to="/Veaux">
+                Veaux
+              </NavLink>
+              {/* <ul className="sub-ul sub-of-js">
+              <li>
+                <a href="">coming soon🔥</a>
+              </li>
+            </ul> */}
+            </li>
+          )}
+
+          {user && (
+            <li className="main-list">
+              <NavLink className="main-link" to="/Collect">
+                Collect
+              </NavLink>
+              {/* <ul className="sub-ul sub-of-js">
+              <li>
+                <a href="">coming soon🔥</a>
+              </li>
+            </ul> */}
+            </li>
+          )}
         </ul>
       </header>
       <header className="show-when-mobile">
