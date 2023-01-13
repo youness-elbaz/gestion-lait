@@ -124,7 +124,7 @@ input[type="submit"]:active{
   scale: 0.9;
 }
 .error-message {
-
+padding: 10px;
   background-color: #f44336;
   color: white !important;
   text-align: center;

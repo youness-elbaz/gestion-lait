@@ -16,7 +16,8 @@ import { useNavigate } from "react-router-dom";
 const SignIn = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  let [haserreur, sethaserreur] = useState(false);
+  const [haserreur, sethaserreur] = useState(false);
+  const [firebaserreur, setfirebaserreur] = useState("false");
   const navigate = useNavigate();
   return (
     <>
@@ -63,9 +64,24 @@ const SignIn = () => {
                 .catch((error) => {
                   const errorCode = error.code;
                   const errorMessage = error.message;
-                  // document.getElementById("testereur").innerHTML = errorMessage;
+
                   sethaserreur(true);
-                
+
+                  switch (errorCode) {
+                    case "auth/invalid-email":
+                      setfirebaserreur("email incorrect");
+                      break;
+                    case "auth/wrong-password":
+                      setfirebaserreur("mot de passe  incorrect");
+                      break;
+                    case "auth/user-not-found":
+                      setfirebaserreur("vous etes pas enregistrer");
+                      break;
+
+                    default:
+                      setfirebaserreur("s'il vous plait vérifier votre email et password");
+                      break;
+                  }
                 });
             }}
             type="submit"
@@ -74,7 +90,7 @@ const SignIn = () => {
           <p>
             Dont have an account <Link to="/SignUp">S'inscrire</Link>
           </p>
-          {haserreur && <p className="error-message">Nom d'utilisateur ou mot de passe incorrect.</p> }
+          {haserreur && <p className="error-message">{firebaserreur}</p>}
         </form>
       </main>
 

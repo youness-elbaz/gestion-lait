@@ -27,7 +27,7 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <div className="youness">
-      {user && <h3>utilisateur :</h3>}
+    
 
       <header className="hide-when-mobile">
         <h1>

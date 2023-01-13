@@ -1,5 +1,5 @@
 main{
-  color: #931515;
+  color: #181717;
 
   height: calc(100vh - 128.64px);
 
@@ -12,4 +12,19 @@ main{
   align-items: center;
  
   text-align: center;
+}
+
+.Light main p{
+  color: #181717 !important;
+}
+
+.Light main .main-link{
+  color: #d50e0e !important;
+  background-color: darkgrey;
+  border-radius: 10px;
+}
+.Dark main .main-link{
+  color: #d50e0e !important;
+  background-color: darkgrey;
+  border-radius: 10px;
 }

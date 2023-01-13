@@ -12,6 +12,9 @@ import { useNavigate } from "react-router-dom";
 const SignUp = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+
+  const [haserreur, sethaserreur] = useState(false);
+  const [firebaserreur, setfirebaserreur] = useState("false");
   const navigate = useNavigate();
   return (
     <>
@@ -21,10 +24,12 @@ const SignUp = () => {
       <Header />
       <main>
         <form>
-        <p style={{ fontSize: "23px", marginBottom: "22px" }}>Create a new account <span>🧡</span> </p>
+          <p style={{ fontSize: "23px", marginBottom: "22px" }}>
+            Create a new account <span>🧡</span>{" "}
+          </p>
           <label>Email d'utilisateur :</label>
           <input
-          required
+            required
             onChange={(eo) => {
               setemail(eo.target.value);
             }}
@@ -36,7 +41,7 @@ const SignUp = () => {
           <label>Mot de passe :</label>
 
           <input
-          required
+            required
             onChange={(eo) => {
               setpassword(eo.target.value);
             }}
@@ -51,7 +56,6 @@ const SignUp = () => {
 
               createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                
                   const user = userCredential.user;
 
                   console.log("done");
@@ -61,6 +65,24 @@ const SignUp = () => {
                   const errorCode = error.code;
                   const errorMessage = error.message;
                   console.log(errorMessage);
+                  sethaserreur(true);
+                  switch (errorCode) {
+                    case "auth/email-already-in-use":
+                      setfirebaserreur(
+                        "email Deja existe veuillez se connecter"
+                      );
+                      break;
+                    case "auth/invalid-email":
+                      setfirebaserreur("Email  incorrect");
+                      break;
+                    case "auth/weak-password":
+                      setfirebaserreur("Le mot de passe doit comporter au moins 6 caractères");
+                      break;
+
+                    default:
+                      setfirebaserreur(errorMessage);
+                      break;
+                  }
                 });
             }}
             type="submit"
@@ -70,6 +92,7 @@ const SignUp = () => {
           <p>
             If you have an account <Link to="/SignIn">Se connecter</Link>
           </p>
+          {haserreur && <p className="error-message">{firebaserreur}</p>}
         </form>
       </main>
 
